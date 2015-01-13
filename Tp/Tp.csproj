@@ -212,6 +212,15 @@
     <Content Include="Images\ImagesTemplate\pic18.jpg" />
     <Content Include="Images\ImagesTemplate\pic19.jpg" />
     <Content Include="Images\ImagesTemplate\pic20.jpg" />
+    <Content Include="Images\ImagesTemplate\pic21.jpg" />
+    <Content Include="Images\ImagesTemplate\pic22.jpg" />
+    <Content Include="Images\ImagesTemplate\pic23.jpg" />
+    <Content Include="Images\ImagesTemplate\pic24.jpg" />
+    <Content Include="Images\ImagesTemplate\pic25.jpg" />
+    <Content Include="Images\ImagesTemplate\pic26.jpg" />
+    <Content Include="Images\ImagesTemplate\pic27.jpg" />
+    <Content Include="Images\ImagesTemplate\pic28.jpg" />
+    <Content Include="Images\ImagesTemplate\pic29.jpg" />
     <Content Include="Images\ImagesTemplate\search.png" />
     <Content Include="Images\Produits\GibbsAquada.jpg" />
     <Content Include="Images\Produits\GibbsAquada2.jpg" />

@@ -1,7 +1,5 @@
-﻿@Scripts.Render("~/Script/slides.min.jquery.js")
-@Scripts.Render("~/Script/jquery-1.7.2.min.js")
-@Scripts.Render("~/Script/jquery.lightbox.js")
-@Styles.Render("~/Content/style.css")
+﻿@Scripts.Render("~/test")
+@Styles.Render("~/css")
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +31,7 @@
                     </div>
                     <div class="menu-main">
                         <ul class="dc_css3_menu">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active">@Html.ActionLink("Home", "Index")</li>
                             <li>@Html.ActionLink("About", "About")</li>
                             <li>@Html.ActionLink("Services", "Services")</li>
                             <li>@Html.ActionLink("Contact", "Contact")</li>

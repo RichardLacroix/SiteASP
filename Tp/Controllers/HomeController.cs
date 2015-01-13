@@ -26,5 +26,12 @@ namespace Tp.Controllers
 
             return View();
         }
+
+        public ActionResult Services()
+        {
+            ViewBag.Message = "Your service page.";
+
+            return View();
+        }
     }
 }

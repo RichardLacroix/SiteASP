@@ -23,14 +23,14 @@ namespace Tp
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/bundles/css").Include(  //Pourquoi ca fontionne meme si je change le lien du bundle
+            bundles.Add(new StyleBundle("~/css").Include(  //Pourquoi ca fontionne meme si je change le lien du bundle
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/global.css",
                       "~/Content/lightbox.css",
                       "~/Content/style.css"));
 
-            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
+            bundles.Add(new ScriptBundle("~/test").Include(
                       "~/Scripts/jquery.lightbox.js",
                       "~/Scripts/jquery-1.7.2.min.js",
                        "~/Scripts/slides.min.jquery.js"));
