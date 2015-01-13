@@ -248,6 +248,9 @@
     <Content Include="Images\Produits\WaterCar_Panther3.jpg" />
     <Content Include="Images\Produits\WaterCar_Panther4.jpg" />
     <Content Include="Images\Produits\WaterCar_Panther5.jpg" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery.lightbox.js" />
+    <Content Include="Scripts\slides.min.jquery.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Images\ImagesTemplate\logo.psd" />
@@ -263,6 +266,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\404.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -288,6 +292,8 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\services.cshtml" />
+    <Content Include="Views\Home\single.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
