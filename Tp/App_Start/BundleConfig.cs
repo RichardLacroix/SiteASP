@@ -30,9 +30,10 @@ namespace Tp
                       "~/Content/lightbox.css",
                       "~/Content/style.css"));
 
-            bundles.Add(new ScriptBundle("~/Scripts/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
+                      "~/Scripts/jquery.lightbox.js",
+                      "~/Scripts/jquery-1.7.2.min.js",
+                       "~/Scripts/slides.min.jquery.js"));
         }
     }
 }

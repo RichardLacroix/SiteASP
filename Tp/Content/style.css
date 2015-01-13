@@ -125,7 +125,7 @@ body{
 	-webkit-border-radius: 0 5px 5px 0;
 	-moz-border-radius: 0 5px 5px 0;
 	border-radius: 0 5px 5px 0;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: url(data:image/svg+xml;base64,[data]);
 	background: -moz-linear-gradient(top, #5d5d5d 0%, #5f5f5f 13%, #5b5b5b 25%, #4f4f4f 44%, #4e4e4e 48%, #494949 52%, #484848 59%, #3c3c3c 82%, #3a3a3a 89%, #3b3b3b 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5D5D5D), color-stop(13%,#5F5F5F), color-stop(25%,#5B5B5B), color-stop(44%,#4F4F4F), color-stop(48%,#4E4E4E), color-stop(52%,#494949), color-stop(59%,#484848), color-stop(82%,#3C3C3C), color-stop(89%,#3A3A3A), color-stop(100%,#3B3B3B));
 	background: -webkit-linear-gradient(top, #5D5D5D 0%,#5F5F5F 13%,#5B5B5B 25%,#4F4F4F 44%,#4E4E4E 48%,#494949 52%,#484848 59%,#3C3C3C 82%,#3A3A3A 89%,#3B3B3B 100%);

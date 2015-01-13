@@ -209,6 +209,9 @@
     <Content Include="Images\ImagesTemplate\marker1.gif" />
     <Content Include="Images\ImagesTemplate\menu-marker.png" />
     <Content Include="Images\ImagesTemplate\nav_icon.png" />
+    <Content Include="Images\ImagesTemplate\pic18.jpg" />
+    <Content Include="Images\ImagesTemplate\pic19.jpg" />
+    <Content Include="Images\ImagesTemplate\pic20.jpg" />
     <Content Include="Images\ImagesTemplate\search.png" />
     <Content Include="Images\Produits\GibbsAquada.jpg" />
     <Content Include="Images\Produits\GibbsAquada2.jpg" />
@@ -292,7 +295,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\services.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\single.cshtml" />
   </ItemGroup>
   <ItemGroup>
