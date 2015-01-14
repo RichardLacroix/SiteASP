@@ -222,6 +222,8 @@
     <Content Include="Images\ImagesTemplate\pic28.jpg" />
     <Content Include="Images\ImagesTemplate\pic29.jpg" />
     <Content Include="Images\ImagesTemplate\search.png" />
+    <Content Include="Images\ImagesTemplate\t-pic11.jpg" />
+    <Content Include="Images\ImagesTemplate\t-pic21.jpg" />
     <Content Include="Images\Produits\GibbsAquada.jpg" />
     <Content Include="Images\Produits\GibbsAquada2.jpg" />
     <Content Include="Images\Produits\GibbsAquada3.jpg" />

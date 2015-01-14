@@ -30,7 +30,7 @@ namespace Tp
                       "~/Content/lightbox.css",
                       "~/Content/style.css"));
 
-            bundles.Add(new ScriptBundle("~/test").Include(
+            bundles.Add(new ScriptBundle("~/jquery").Include(
                       "~/Scripts/jquery.lightbox.js",
                       "~/Scripts/jquery-1.7.2.min.js",
                        "~/Scripts/slides.min.jquery.js"));
