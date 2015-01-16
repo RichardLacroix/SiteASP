@@ -16,8 +16,7 @@ namespace Tp.Models.EF
     {
         public int IdCompte { get; set; }
         public string TypeCompte1 { get; set; }
-        public Nullable<System.DateTime> DateCreation { get; set; }
     
-        public virtual Client Client { get; set; }
+        public virtual TypeComptesClient TypeComptesClient { get; set; }
     }
 }

@@ -202,7 +202,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\Paiement.cs">
+      <DependentUpon>ModelContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\TypeCompte.cs">
+      <DependentUpon>ModelContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\TypeComptesClient.cs">
       <DependentUpon>ModelContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\Vehicule.cs">
