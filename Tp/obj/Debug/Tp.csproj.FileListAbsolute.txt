@@ -107,3 +107,4 @@ C:\Users\King\Documents\Visual Studio 2013\Projects\tpASPGit\SiteASP\Tp\bin\Micr
 C:\Users\King\Documents\Visual Studio 2013\Projects\tpASPGit\SiteASP\Tp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\King\Documents\Visual Studio 2013\Projects\tpASPGit\SiteASP\Tp\obj\Debug\Tp.dll
 C:\Users\King\Documents\Visual Studio 2013\Projects\tpASPGit\SiteASP\Tp\obj\Debug\Tp.pdb
+C:\Users\King\Documents\Visual Studio 2013\Projects\tpASPGit\SiteASP\Tp\obj\Debug\Tp.csprojResolveAssemblyReference.cache
