@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbConcessionnaireModelStoreContainer" CdmEntityContainer="DbConcessionnaireEntities">
+    <EntitySetMapping Name="CategorieVehicules">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.CategorieVehicule">
+        <MappingFragment StoreEntitySet="CategorieVehicules">
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+          <ScalarProperty Name="NomCategorie" ColumnName="NomCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Courriel" ColumnName="Courriel" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="NumeroCivique" ColumnName="NumeroCivique" />
+          <ScalarProperty Name="Rue" ColumnName="Rue" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="NumeroPermis" ColumnName="NumeroPermis" />
+          <ScalarProperty Name="NumeroCarteCredit" ColumnName="NumeroCarteCredit" />
+          <ScalarProperty Name="DateExpirationCarte" ColumnName="DateExpirationCarte" />
+          <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commentaires">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.Commentaire">
+        <MappingFragment StoreEntitySet="Commentaires">
+          <ScalarProperty Name="IdCommentaire" ColumnName="IdCommentaire" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="DateCommentaire" ColumnName="DateCommentaire" />
+          <ScalarProperty Name="Cote" ColumnName="Cote" />
+          <ScalarProperty Name="Commentaire1" ColumnName="Commentaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favoris">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.Favori">
+        <MappingFragment StoreEntitySet="Favoris">
+          <ScalarProperty Name="IdFavoris" ColumnName="IdFavoris" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeComptes">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.TypeCompte">
+        <MappingFragment StoreEntitySet="TypeComptes">
+          <ScalarProperty Name="IdCompte" ColumnName="IdCompte" />
+          <ScalarProperty Name="TypeCompte1" ColumnName="TypeCompte" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicules">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.Vehicule">
+        <MappingFragment StoreEntitySet="Vehicules">
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="VitesseTerre" ColumnName="VitesseTerre" />
+          <ScalarProperty Name="VitesseEau" ColumnName="VitesseEau" />
+          <ScalarProperty Name="DescriptionVehicule" ColumnName="DescriptionVehicule" />
+          <ScalarProperty Name="Apparition" ColumnName="Apparition" />
+          <ScalarProperty Name="Fabricant" ColumnName="Fabricant" />
+          <ScalarProperty Name="Moteur" ColumnName="Moteur" />
+          <ScalarProperty Name="PrixVente" ColumnName="PrixVente" />
+          <ScalarProperty Name="PrixAchat" ColumnName="PrixAchat" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+          <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+          <ScalarProperty Name="Photo3" ColumnName="Photo3" />
+          <ScalarProperty Name="Photo4" ColumnName="Photo4" />
+          <ScalarProperty Name="QuantiteInventaire" ColumnName="QuantiteInventaire" />
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventes">
+      <EntityTypeMapping TypeName="DbConcessionnaireModel.Vente">
+        <MappingFragment StoreEntitySet="Ventes">
+          <ScalarProperty Name="IdVente" ColumnName="IdVente" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="DateVente" ColumnName="DateVente" />
+          <ScalarProperty Name="PrixVente" ColumnName="PrixVente" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TypeComptesClients" TypeName="DbConcessionnaireModel.TypeComptesClients" StoreEntitySet="TypeComptesClients">
+      <EndProperty Name="Clients">
+        <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+      </EndProperty>
+      <EndProperty Name="TypeComptes">
+        <ScalarProperty Name="IdCompte" ColumnName="IdCompte" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

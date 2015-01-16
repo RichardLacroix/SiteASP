@@ -1,0 +1,62 @@
+﻿@model Tp.Models.EF.Client
+@{
+    ViewBag.Title = "Inscription";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inscription</h2>
+
+@using (Html.BeginForm("Inscription", "inscription"))
+{
+    @Html.ValidationSummary(true, "Certain champs ne sont pas rempli")
+    
+    @Html.HiddenFor(m => m.IdClient)
+    
+    @Html.LabelFor(m => m.Nom)
+    @Html.TextBoxFor(m => m.Nom)
+    <br/>
+    //@Html.HiddenFor(m => m.Prenom)
+    @Html.LabelFor(m => m.Prenom)
+    @Html.TextBoxFor(m => m.Prenom)
+    <br/>
+    //@Html.HiddenFor(m => m.Courriel)
+    @Html.LabelFor(m => m.Courriel)
+    @Html.TextBoxFor(m => m.Courriel)
+    <br/>
+    //@Html.HiddenFor(m => m.Telephone)
+    @Html.LabelFor(m => m.Telephone)
+    @Html.TextBoxFor(m => m.Telephone)
+    <br/>
+    //@Html.HiddenFor(m => m.NumeroCivique)
+    @Html.LabelFor(m => m.NumeroCivique)
+    @Html.TextBoxFor(m => m.NumeroCivique)
+    <br/>
+    //@Html.HiddenFor(m => m.Rue)
+    @Html.LabelFor(m => m.Rue)
+    @Html.TextBoxFor(m => m.Rue)
+    <br/>
+    //@Html.HiddenFor(m => m.Ville)
+    @Html.LabelFor(m => m.Ville)
+    @Html.TextBoxFor(m => m.Ville)
+    <br/>
+    //@Html.HiddenFor(m => m.Province)
+    @Html.LabelFor(m => m.Province)
+    @Html.TextBoxFor(m => m.Province)
+    <br/>
+    //@Html.HiddenFor(m => m.CodePostal)
+    @Html.LabelFor(m => m.CodePostal)
+    @Html.TextBoxFor(m => m.CodePostal)
+    <br/>
+    //@Html.HiddenFor(m => m.Sexe)
+    @Html.LabelFor(m => m.Sexe)
+    @Html.TextBoxFor(m => m.Sexe)
+    <br/>
+    //@Html.HiddenFor(m => m.IdClient)
+    @Html.LabelFor(m => m.MotDePasse)
+    @Html.TextBoxFor(m => m.MotDePasse)
+    <br/>
+    //@Html.HiddenFor(m => m.IdClient)
+    @Html.LabelFor(m => m.MotDePasse)
+    @Html.TextBoxFor(m => m.MotDePasse)
+    <br/>
+}
