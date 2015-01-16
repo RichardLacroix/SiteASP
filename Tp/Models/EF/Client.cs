@@ -18,13 +18,14 @@ namespace Tp.Models.EF
         {
             this.Commentaires = new HashSet<Commentaire>();
             this.Favoris = new HashSet<Favori>();
+            this.TypeComptesClients = new HashSet<TypeComptesClient>();
             this.Ventes = new HashSet<Vente>();
-            this.TypeComptes = new HashSet<TypeCompte>();
         }
     
         public int IdClient { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
+        public string NomUtilisateur { get; set; }
         public string MotDePasse { get; set; }
         public string Courriel { get; set; }
         public string Telephone { get; set; }
@@ -34,14 +35,12 @@ namespace Tp.Models.EF
         public string Province { get; set; }
         public string CodePostal { get; set; }
         public string NumeroPermis { get; set; }
-        public string NumeroCarteCredit { get; set; }
-        public System.DateTime DateExpirationCarte { get; set; }
         public bool Sexe { get; set; }
         public string Photo { get; set; }
     
         public virtual ICollection<Commentaire> Commentaires { get; set; }
         public virtual ICollection<Favori> Favoris { get; set; }
+        public virtual ICollection<TypeComptesClient> TypeComptesClients { get; set; }
         public virtual ICollection<Vente> Ventes { get; set; }
-        public virtual ICollection<TypeCompte> TypeComptes { get; set; }
     }
 }

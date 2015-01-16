@@ -12,16 +12,13 @@ namespace Tp.Models.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Commentaire
+    public partial class TypeComptesClient
     {
-        public int IdCommentaire { get; set; }
-        public int IdVehicule { get; set; }
+        public int IdCompte { get; set; }
         public int IdClient { get; set; }
-        public Nullable<System.DateTime> DateCommentaire { get; set; }
-        public Nullable<int> Cote { get; set; }
-        public string Commentaire1 { get; set; }
+        public Nullable<System.DateTime> DateCreation { get; set; }
     
-        public virtual Vehicule Vehicule { get; set; }
+        public virtual TypeCompte TypeCompte { get; set; }
         public virtual Client Client { get; set; }
     }
 }
