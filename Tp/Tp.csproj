@@ -388,6 +388,7 @@
     <Content Include="Views\Home\single.cshtml" />
     <Content Include="Views\Inscription\Inscription.cshtml" />
     <Content Include="Views\Inscription\Index.cshtml" />
+    <Content Include="Views\Shared\_ConnexionPartielle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
