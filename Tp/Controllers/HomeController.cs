@@ -29,7 +29,9 @@ namespace Tp.Controllers
 
         public ActionResult Services()
         {
-            ViewBag.Message = "Your service page.";
+            ViewBag.Message = "Inventaire";
+
+
 
             return View();
         }

@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
+    <Compile Include="Controllers\VehiculeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,6 +182,7 @@
     <Compile Include="Models\EF\Entity\Commentaire.cs" />
     <Compile Include="Models\EF\Entity\Favori.cs" />
     <Compile Include="Models\EF\Entity\ModelContext.cs" />
+    <Compile Include="Models\EF\Entity\Paiement.cs" />
     <Compile Include="Models\EF\Entity\TypeCompte.cs" />
     <Compile Include="Models\EF\Entity\Vehicule.cs" />
     <Compile Include="Models\EF\Entity\Vente.cs" />
@@ -392,6 +394,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\InventaireCategorie\" />
+    <Folder Include="Views\Vehicule\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
