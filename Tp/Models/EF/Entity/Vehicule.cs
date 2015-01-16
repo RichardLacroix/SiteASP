@@ -7,14 +7,15 @@ namespace Tp.Models.EF
 {
     public partial class Vehicule
     {
-        public static List<Vehicule> RecupererTousVehicule()
+        public static List<Vehicule> Recuperer()
         {
-           /* using (TestMVC4Entities db = new TestMVC4Entities())
+
+            using (DbConcessionnaireEntities bd = new DbConcessionnaireEntities())
             {
-                var rValue = db.Produits.ToList();
-                
-            }*/
+                List<Vehicule> lstVehicule = bd.Vehicules.ToList();
+            }
             return null;
         }
+
     }
 }
