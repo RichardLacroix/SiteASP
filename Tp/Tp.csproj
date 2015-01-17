@@ -161,10 +161,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentaireController.cs" />
     <Compile Include="Controllers\FavoriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\VehiculeController.cs" />
+    <Compile Include="Controllers\VenteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -395,9 +398,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Commentaire\" />
     <Folder Include="Views\Favori\" />
-    <Folder Include="Views\InventaireCategorie\" />
+    <Folder Include="Views\Inventaire\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="Views\Vehicule\" />
+    <Folder Include="Views\Vente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
