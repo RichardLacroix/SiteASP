@@ -7,5 +7,6 @@ namespace Tp.Models.EF
 {
     public partial class Paiement
     {
+       
     }
 }

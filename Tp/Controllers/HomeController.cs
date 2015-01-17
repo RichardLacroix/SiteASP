@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tp.Models.EF;
 
 namespace Tp.Controllers
 {
@@ -31,9 +32,9 @@ namespace Tp.Controllers
         {
             ViewBag.Message = "Inventaire";
 
+            List<Vehicule> listeVehicule = Vehicule.RecupererVehiculeParCategorie(1);
 
-
-            return View();
+            return View(listeVehicule);
         }
     }
 }
