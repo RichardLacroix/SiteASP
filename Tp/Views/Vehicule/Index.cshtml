@@ -1,0 +1,73 @@
+﻿@using Tp.Models.EF
+
+@model List<Vehicule>
+
+@{
+    ViewBag.Title = "Inventaire des vehicules";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    String msg = (String)TempData["FormMessage"];
+
+    List<CategorieVehicule> listeCat = ViewBag.listeCategorie;
+
+}
+
+<h2>Inventaire des vehicules</h2>
+
+@msg
+
+<div>
+
+    <select id="listeCategorie">
+        <option value="0">- Tous -</option>
+
+        @foreach (CategorieVehicule cv in listeCat)
+        {
+            <option value="@cv.IdCategorie">@cv.NomCategorie</option>
+        }
+    </select>
+
+</div>
+
+<div id="listeVehicule">
+
+    @foreach (Vehicule v in Model)
+    {
+        <ul>
+            <li>Prix vente =@v.PrixVente $</li>
+            <li>Id categorie =@v.IdCategorie</li>
+            <li>Marque =@v.Marque</li>
+        </ul>
+
+        <a href="@Url.Action("Detail", new {pIdVehicule =  v.IdVehicule })">Details</a>
+    }
+
+</div>
+
+<a href="@Url.Action("Ajouter")">Ajouter un vehicule</a>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //Racine du site, plus securitaire de passer par la racine (on est sure que ca va toujours fonctionner)
+        var globalURL = '@VirtualPathUtility.ToAbsolute("~/")';
+
+        //Evenement lorsqu'on va changer le select du dropdownlist
+        $("#listeCategorie").change(function () {
+            //Appel(url) complet de l'action pour updater la liste des provinces
+            var url = globalURL + "Vehicule/Index";
+
+            var paysId = $("#listeCategorie").val();  //$("#ddlPays")
+
+            $.get(url, { idCategorie: paysId }, function (data) {
+                var divJ = $("#listeVehicule");
+                //vider le div des provinces
+                divJ.empty();
+                //Mettre le nouveau contenu dans le div des provinces
+                divJ.html(data);
+            });
+
+        });
+
+    });
+</script>

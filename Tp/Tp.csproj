@@ -396,6 +396,7 @@
     <Content Include="Views\Inscription\Inscription.cshtml" />
     <Content Include="Views\Inscription\Index.cshtml" />
     <Content Include="Views\Shared\_ConnexionPartielle.cshtml" />
+    <Content Include="Views\Vehicule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -404,7 +405,6 @@
     <Folder Include="Views\Favori\" />
     <Folder Include="Views\Inventaire\" />
     <Folder Include="Views\Payment\" />
-    <Folder Include="Views\Vehicule\" />
     <Folder Include="Views\Vente\" />
   </ItemGroup>
   <ItemGroup>
