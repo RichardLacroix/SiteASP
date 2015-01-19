@@ -35,7 +35,7 @@ namespace Tp.Controllers
             return View(vehicule);
         }
 
-        public ActionResult ModifierUnVehicule(int? pIdVehicule)
+        public ActionResult Modifier(int? pIdVehicule)
         {
             Vehicule vehicule = Vehicule.RecupererVehiculeParId(pIdVehicule);
 
@@ -51,7 +51,7 @@ namespace Tp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Modifier(Vehicule pVehiculeModele)
+        public ActionResult ModifierUnVehicule(Vehicule pVehiculeModele)
         {
             if (ModelState.IsValid)
             {

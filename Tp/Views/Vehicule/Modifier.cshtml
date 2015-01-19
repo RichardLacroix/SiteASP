@@ -1,0 +1,56 @@
+﻿@using Tp.Models.EF
+
+@model Vehicule
+
+@{
+    ViewBag.Title = "Modifier un vehicule";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<h2>Modifier un vehicule</h2>
+
+@using (Html.BeginForm("Modifier", "Vehicule"))
+{
+    @Html.ValidationSummary(true, "Certain champs ne sont pas valide:")
+
+    @Html.HiddenFor(m => m.IdVehicule)
+    @Html.HiddenFor(m => m.IdCategorie)
+
+    <br />
+
+    @Html.LabelFor(m => m.Photo)
+    @Html.EditorFor(m => m.Photo)
+
+    @Html.LabelFor(m => m.Photo1)
+    @Html.EditorFor(m => m.Photo1)
+
+    @Html.LabelFor(m => m.Photo2)
+    @Html.EditorFor(m => m.Photo2)
+
+    @Html.LabelFor(m => m.Photo3)
+    @Html.EditorFor(m => m.Photo3)
+
+    @Html.LabelFor(m => m.Photo4)
+    @Html.EditorFor(m => m.Photo4)
+
+    @Html.LabelFor(m => m.DescriptionVehicule)
+    @Html.TextAreaFor(m => m.DescriptionVehicule)
+
+    @Html.LabelFor(m => m.PrixAchat)
+    @Html.EditorFor(m => m.PrixAchat)
+
+    @Html.LabelFor(m => m.PrixVente)
+    @Html.EditorFor(m => m.PrixVente)
+
+    @Html.LabelFor(m => m.QuantiteInventaire)
+    @Html.EditorFor(m => m.QuantiteInventaire)
+
+    <br />
+
+    <input type="submit" value="Enregistrer" />
+}

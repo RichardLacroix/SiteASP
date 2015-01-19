@@ -1,0 +1,19 @@
+﻿@using Tp.Models.EF
+
+@model Vehicule
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Marque</h2>
+
+@Model.PrixVente
+
+<br />
+<a href="@Url.Action("Modifier", new {pIdVehicule =  Model.IdVehicule })">Modifier</a>
+
+<br />
+
+<a href="@Url.Action("SupprimerUnVehicule", new {pIdVehicule =  Model.IdVehicule })">Supprimer</a>

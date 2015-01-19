@@ -1,0 +1,89 @@
+﻿@using Tp.Models.EF
+
+@model Vehicule
+
+@{
+    ViewBag.Title = "Ajouter";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<h2>Ajouter</h2>
+
+@using (Html.BeginForm("Modifier", "Vehicule", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "Certain champs ne sont pas valide:")
+
+    <br />
+
+    @Html.LabelFor(m => m.Marque)
+    @Html.TextBoxFor(m => m.Marque)
+    @Html.ValidationMessageFor(m => m.Marque)
+
+    @Html.LabelFor(m => m.Fabricant)
+    @Html.TextBoxFor(m => m.Fabricant)
+    @Html.ValidationMessageFor(m => m.Fabricant)
+
+    @Html.LabelFor(m => m.Moteur)
+    @Html.TextBoxFor(m => m.Moteur)
+    @Html.ValidationMessageFor(m => m.Moteur)
+
+    @Html.LabelFor(m => m.Photo)
+    @Html.TextBoxFor(m => m.Photo)
+    @Html.ValidationMessageFor(m => m.Photo)
+
+    @Html.LabelFor(m => m.Photo1)
+    @Html.TextBoxFor(m => m.Photo1)
+    @Html.ValidationMessageFor(m => m.Photo1)
+
+    @Html.LabelFor(m => m.Photo2)
+    @Html.TextBoxFor(m => m.Photo2)
+    @Html.ValidationMessageFor(m => m.Photo2)
+
+    @Html.LabelFor(m => m.Photo3)
+    @Html.TextBoxFor(m => m.Photo3)
+    @Html.ValidationMessageFor(m => m.Photo3)
+
+    @Html.LabelFor(m => m.Photo4)
+    @Html.TextBoxFor(m => m.Photo4)
+    @Html.ValidationMessageFor(m => m.Photo4)
+
+    @Html.LabelFor(m => m.DescriptionVehicule)
+    @Html.TextAreaFor(m => m.DescriptionVehicule)
+    @Html.ValidationMessageFor(m => m.DescriptionVehicule)
+
+    @Html.LabelFor(m => m.Apparition)
+    @Html.TextBoxFor(m => m.Apparition)
+    @Html.ValidationMessageFor(m => m.Apparition)
+
+    @Html.LabelFor(m => m.IdCategorie)
+    @Html.TextBoxFor(m => m.IdCategorie)
+    @Html.ValidationMessageFor(m => m.IdCategorie)
+
+    @Html.LabelFor(m => m.PrixAchat)
+    @Html.TextBoxFor(m => m.PrixAchat)
+    @Html.ValidationMessageFor(m => m.PrixAchat)
+
+    @Html.LabelFor(m => m.PrixVente)
+    @Html.TextBoxFor(m => m.PrixVente)
+    @Html.ValidationMessageFor(m => m.PrixVente)
+
+    @Html.LabelFor(m => m.VitesseEau)
+    @Html.TextBoxFor(m => m.VitesseEau)
+    @Html.ValidationMessageFor(m => m.VitesseEau)
+
+    @Html.LabelFor(m => m.VitesseTerre)
+    @Html.TextBoxFor(m => m.VitesseTerre)
+    @Html.ValidationMessageFor(m => m.VitesseTerre)
+
+    @Html.LabelFor(m => m.QuantiteInventaire)
+    @Html.TextBoxFor(m => m.QuantiteInventaire)
+    @Html.ValidationMessageFor(m => m.QuantiteInventaire)
+
+    <br />
+
+    <input type="submit" value="Enregistrer" />
+}

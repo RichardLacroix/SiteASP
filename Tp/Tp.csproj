@@ -397,6 +397,9 @@
     <Content Include="Views\Inscription\Index.cshtml" />
     <Content Include="Views\Shared\_ConnexionPartielle.cshtml" />
     <Content Include="Views\Vehicule\Index.cshtml" />
+    <Content Include="Views\Vehicule\Detail.cshtml" />
+    <Content Include="Views\Vehicule\Modifier.cshtml" />
+    <Content Include="Views\Vehicule\Ajouter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
