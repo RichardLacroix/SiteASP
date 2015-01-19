@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategorieVehiculeController.cs" />
     <Compile Include="Controllers\CommentaireController.cs" />
     <Compile Include="Controllers\FavoriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -398,6 +399,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CategorieVehicule\" />
     <Folder Include="Views\Commentaire\" />
     <Folder Include="Views\Favori\" />
     <Folder Include="Views\Inventaire\" />
