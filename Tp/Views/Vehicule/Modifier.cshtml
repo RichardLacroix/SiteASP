@@ -14,12 +14,18 @@
 
 <h2>Modifier un vehicule</h2>
 
-@using (Html.BeginForm("Modifier", "Vehicule"))
+@using (Html.BeginForm("ModifierOuAjouter", "Vehicule", FormMethod.Post))
 {
     @Html.ValidationSummary(true, "Certain champs ne sont pas valide:")
 
     @Html.HiddenFor(m => m.IdVehicule)
     @Html.HiddenFor(m => m.IdCategorie)
+    @Html.HiddenFor(m => m.Apparition)
+    @Html.HiddenFor(m => m.Fabricant)
+    @Html.HiddenFor(m => m.Marque)
+    @Html.HiddenFor(m => m.Moteur)
+    @Html.HiddenFor(m => m.VitesseEau)
+    @Html.HiddenFor(m => m.VitesseTerre)
 
     <br />
 

@@ -26,8 +26,8 @@ namespace Tp.Models.EF
         public decimal PrixVente { get; set; }
         public int Quantite { get; set; }
     
-        public virtual Client Client { get; set; }
-        public virtual ICollection<Paiement> Paiements { get; set; }
         public virtual Vehicule Vehicule { get; set; }
+        public virtual ICollection<Paiement> Paiements { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

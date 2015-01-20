@@ -9,23 +9,34 @@ namespace Tp.Controllers
 {
     public class VehiculeController : Controller
     {
-        public ActionResult Index(int? idCategorie)
+        public ActionResult Index()
         {
-            List<Vehicule> listeVehicule;
+            List<Vehicule> listeVehicule = Vehicule.RecupererTousVehicule();
 
-            if (idCategorie > 0)
-            {
-                listeVehicule = Vehicule.RecupererVehiculeParCategorie(idCategorie);
-            }
-            else
-            {
-                listeVehicule = Vehicule.RecupererTousVehicule();
-            }
             List<CategorieVehicule> listeCategorie = CategorieVehicule.RecupererTouteCategorie();
 
             ViewBag.listeCategorie = new List<CategorieVehicule>(listeCategorie);
 
             return View(listeVehicule);
+        }
+
+        public ActionResult RemplirListeVehicule(int? idCategorie)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                List<Vehicule> listeVehicule;
+
+                if (idCategorie > 0)
+                {
+                    listeVehicule = Vehicule.RecupererVehiculeParCategorie(idCategorie);
+                }
+                else
+                {
+                    listeVehicule = Vehicule.RecupererTousVehicule();
+                }
+                return PartialView("_InventairePartielle", listeVehicule);
+            }
+            return View();
         }
 
         public ActionResult Detail(int pIdVehicule)
@@ -51,13 +62,13 @@ namespace Tp.Controllers
         }
 
         [HttpPost]
-        public ActionResult ModifierUnVehicule(Vehicule pVehiculeModele)
+        public ActionResult ModifierOuAjouter(Vehicule pVehiculeModele)
         {
             if (ModelState.IsValid)
             {
                 Vehicule.Sauvegarder(pVehiculeModele);
 
-                TempData["FormMessage"] = "Mise à jour réussi!";
+                TempData["FormMessage"] = "Sauvegarde réussi!";
 
                 ModelState.Clear();
 

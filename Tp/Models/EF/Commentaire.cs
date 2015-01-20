@@ -21,7 +21,7 @@ namespace Tp.Models.EF
         public Nullable<int> Cote { get; set; }
         public string Commentaire1 { get; set; }
     
-        public virtual Client Client { get; set; }
         public virtual Vehicule Vehicule { get; set; }
+        public virtual Client Client { get; set; }
     }
 }
