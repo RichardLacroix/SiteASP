@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Tp.Models;
+using Tp.Models.EF;
 
 namespace Tp.Controllers
 {
@@ -74,7 +75,7 @@ namespace Tp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(Client model)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +84,11 @@ namespace Tp.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
+                    ApplicationUser appUser = UserManager.FindByName(model.UserName);
+                    model.AspNetUserId = appUser.Id;
+                    Client.Save(model);
                     return RedirectToAction("Index", "Home");
+
                 }
                 else
                 {

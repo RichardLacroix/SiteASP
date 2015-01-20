@@ -1,0 +1,42 @@
+﻿@using Tp.Models.EF;
+@model List<Commentaire>
+
+@{
+    ViewBag.Title = "Commentaire";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <div class="wrap">
+        <div class="main-box">
+            <div class="box_wrapper"><h1>Commentaires</h1></div>
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <div class="grid_desc">
+                        @foreach (Commentaire item in Model)
+                        {
+                            <p>hahahahaha</p>
+                            <p class="title">Commentaire pour @item.IdVehicule</p>
+                            <p class="title1">@item.DateCommentaire</p>
+                        }
+                        <div class="price1" style="height: 19px;">
+                            <span class="reducedfrom">$66.00</span>
+                            <span class="actual">$12.00</span>
+                        </div>
+                        @foreach (Commentaire item in Model)
+                        {
+                            <div>
+                                <span>@item.Cote</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="Details">
+                        <a href="single.html" title="Lorem ipsum dolor sit amet, consect etuer" class="button">Details<span></span></a>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>

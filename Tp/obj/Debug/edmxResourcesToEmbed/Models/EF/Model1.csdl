@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbConcessionnaireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CategorieVehicule">
+    <Key>
+      <PropertyRef Name="IdCategorie" />
+    </Key>
+    <Property Name="IdCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomCategorie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Vehicules" Relationship="Self.FK__Vehicules__IdCat__1CF15040" FromRole="CategorieVehicules" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Courriel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telephone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NumeroCivique" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Province" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodePostal" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NumeroPermis" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sexe" Type="Boolean" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AspNetUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__IdCli__286302EC" FromRole="Clients" ToRole="Commentaires" />
+    <NavigationProperty Name="Favoris" Relationship="Self.FK__Favoris__IdClien__2E1BDC42" FromRole="Clients" ToRole="Favoris" />
+    <NavigationProperty Name="TypeComptesClients" Relationship="Self.FK__TypeCompt__IdCli__164452B1" FromRole="Clients" ToRole="TypeComptesClients" />
+    <NavigationProperty Name="Ventes" Relationship="Self.FK__Ventes__IdClient__20C1E124" FromRole="Clients" ToRole="Ventes" />
+  </EntityType>
+  <EntityType Name="Commentaire">
+    <Key>
+      <PropertyRef Name="IdCommentaire" />
+    </Key>
+    <Property Name="IdCommentaire" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="DateCommentaire" Type="DateTime" Precision="3" />
+    <Property Name="Cote" Type="Int32" />
+    <Property Name="Commentaire1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Commentai__IdCli__286302EC" FromRole="Commentaires" ToRole="Clients" />
+    <NavigationProperty Name="Vehicule" Relationship="Self.FK__Commentai__IdVeh__276EDEB3" FromRole="Commentaires" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Favori">
+    <Key>
+      <PropertyRef Name="IdFavoris" />
+    </Key>
+    <Property Name="IdFavoris" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Favoris__IdClien__2E1BDC42" FromRole="Favoris" ToRole="Clients" />
+    <NavigationProperty Name="Vehicule" Relationship="Self.FK__Favoris__IdVehic__2D27B809" FromRole="Favoris" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Paiement">
+    <Key>
+      <PropertyRef Name="IdPaiement" />
+    </Key>
+    <Property Name="IdPaiement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVente" Type="Int32" Nullable="false" />
+    <Property Name="NumeroCarteCredit" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateExpirationCarte" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Vente" Relationship="Self.FK__Paiements__IdVen__24927208" FromRole="Paiements" ToRole="Ventes" />
+  </EntityType>
+  <EntityType Name="TypeCompte">
+    <Key>
+      <PropertyRef Name="IdCompte" />
+    </Key>
+    <Property Name="IdCompte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeCompte1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TypeComptesClient" Relationship="Self.FK_TypeComptes" FromRole="TypeComptes" ToRole="TypeComptesClients" />
+  </EntityType>
+  <EntityType Name="TypeComptesClient">
+    <Key>
+      <PropertyRef Name="IdCompte" />
+    </Key>
+    <Property Name="IdCompte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="DateCreation" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__TypeCompt__IdCli__164452B1" FromRole="TypeComptesClients" ToRole="Clients" />
+    <NavigationProperty Name="TypeCompte" Relationship="Self.FK_TypeComptes" FromRole="TypeComptesClients" ToRole="TypeComptes" />
+  </EntityType>
+  <EntityType Name="Vehicule">
+    <Key>
+      <PropertyRef Name="IdVehicule" />
+    </Key>
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marque" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VitesseTerre" Type="Int32" Nullable="false" />
+    <Property Name="VitesseEau" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionVehicule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apparition" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Fabricant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Moteur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrixVente" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="PrixAchat" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Photo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Photo2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Photo3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Photo4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QuantiteInventaire" Type="Int32" Nullable="false" />
+    <Property Name="IdCategorie" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CategorieVehicule" Relationship="Self.FK__Vehicules__IdCat__1CF15040" FromRole="Vehicules" ToRole="CategorieVehicules" />
+    <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__IdVeh__276EDEB3" FromRole="Vehicules" ToRole="Commentaires" />
+    <NavigationProperty Name="Favoris" Relationship="Self.FK__Favoris__IdVehic__2D27B809" FromRole="Vehicules" ToRole="Favoris" />
+    <NavigationProperty Name="Ventes" Relationship="Self.FK__Ventes__IdVehicu__1FCDBCEB" FromRole="Vehicules" ToRole="Ventes" />
+  </EntityType>
+  <EntityType Name="Vente">
+    <Key>
+      <PropertyRef Name="IdVente" />
+    </Key>
+    <Property Name="IdVente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="DateVente" Type="DateTime" Precision="3" />
+    <Property Name="PrixVente" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="Quantite" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Ventes__IdClient__20C1E124" FromRole="Ventes" ToRole="Clients" />
+    <NavigationProperty Name="Paiements" Relationship="Self.FK__Paiements__IdVen__24927208" FromRole="Ventes" ToRole="Paiements" />
+    <NavigationProperty Name="Vehicule" Relationship="Self.FK__Ventes__IdVehicu__1FCDBCEB" FromRole="Ventes" ToRole="Vehicules" />
+  </EntityType>
+  <Association Name="FK__Vehicules__IdCat__1CF15040">
+    <End Role="CategorieVehicules" Type="Self.CategorieVehicule" Multiplicity="1" />
+    <End Role="Vehicules" Type="Self.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategorieVehicules">
+        <PropertyRef Name="IdCategorie" />
+      </Principal>
+      <Dependent Role="Vehicules">
+        <PropertyRef Name="IdCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commentai__IdCli__286302EC">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Commentaires" Type="Self.Commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="Commentaires">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favoris__IdClien__2E1BDC42">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Favoris" Type="Self.Favori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="Favoris">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TypeCompt__IdCli__164452B1">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="TypeComptesClients" Type="Self.TypeComptesClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="TypeComptesClients">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ventes__IdClient__20C1E124">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Ventes" Type="Self.Vente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="Ventes">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commentai__IdVeh__276EDEB3">
+    <End Role="Vehicules" Type="Self.Vehicule" Multiplicity="1" />
+    <End Role="Commentaires" Type="Self.Commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicules">
+        <PropertyRef Name="IdVehicule" />
+      </Principal>
+      <Dependent Role="Commentaires">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Favoris__IdVehic__2D27B809">
+    <End Role="Vehicules" Type="Self.Vehicule" Multiplicity="1" />
+    <End Role="Favoris" Type="Self.Favori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicules">
+        <PropertyRef Name="IdVehicule" />
+      </Principal>
+      <Dependent Role="Favoris">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Paiements__IdVen__24927208">
+    <End Role="Ventes" Type="Self.Vente" Multiplicity="1" />
+    <End Role="Paiements" Type="Self.Paiement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventes">
+        <PropertyRef Name="IdVente" />
+      </Principal>
+      <Dependent Role="Paiements">
+        <PropertyRef Name="IdVente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TypeComptes">
+    <End Role="TypeComptes" Type="Self.TypeCompte" Multiplicity="1" />
+    <End Role="TypeComptesClients" Type="Self.TypeComptesClient" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TypeComptes">
+        <PropertyRef Name="IdCompte" />
+      </Principal>
+      <Dependent Role="TypeComptesClients">
+        <PropertyRef Name="IdCompte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ventes__IdVehicu__1FCDBCEB">
+    <End Role="Vehicules" Type="Self.Vehicule" Multiplicity="1" />
+    <End Role="Ventes" Type="Self.Vente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicules">
+        <PropertyRef Name="IdVehicule" />
+      </Principal>
+      <Dependent Role="Ventes">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbConcessionnaireEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CategorieVehicules" EntityType="Self.CategorieVehicule" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Commentaires" EntityType="Self.Commentaire" />
+    <EntitySet Name="Favoris" EntityType="Self.Favori" />
+    <EntitySet Name="Paiements" EntityType="Self.Paiement" />
+    <EntitySet Name="TypeComptes" EntityType="Self.TypeCompte" />
+    <EntitySet Name="TypeComptesClients" EntityType="Self.TypeComptesClient" />
+    <EntitySet Name="Vehicules" EntityType="Self.Vehicule" />
+    <EntitySet Name="Ventes" EntityType="Self.Vente" />
+    <AssociationSet Name="FK__Vehicules__IdCat__1CF15040" Association="Self.FK__Vehicules__IdCat__1CF15040">
+      <End Role="CategorieVehicules" EntitySet="CategorieVehicules" />
+      <End Role="Vehicules" EntitySet="Vehicules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commentai__IdCli__286302EC" Association="Self.FK__Commentai__IdCli__286302EC">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Commentaires" EntitySet="Commentaires" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favoris__IdClien__2E1BDC42" Association="Self.FK__Favoris__IdClien__2E1BDC42">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Favoris" EntitySet="Favoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TypeCompt__IdCli__164452B1" Association="Self.FK__TypeCompt__IdCli__164452B1">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="TypeComptesClients" EntitySet="TypeComptesClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ventes__IdClient__20C1E124" Association="Self.FK__Ventes__IdClient__20C1E124">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Ventes" EntitySet="Ventes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commentai__IdVeh__276EDEB3" Association="Self.FK__Commentai__IdVeh__276EDEB3">
+      <End Role="Vehicules" EntitySet="Vehicules" />
+      <End Role="Commentaires" EntitySet="Commentaires" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Favoris__IdVehic__2D27B809" Association="Self.FK__Favoris__IdVehic__2D27B809">
+      <End Role="Vehicules" EntitySet="Vehicules" />
+      <End Role="Favoris" EntitySet="Favoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Paiements__IdVen__24927208" Association="Self.FK__Paiements__IdVen__24927208">
+      <End Role="Ventes" EntitySet="Ventes" />
+      <End Role="Paiements" EntitySet="Paiements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TypeComptes" Association="Self.FK_TypeComptes">
+      <End Role="TypeComptes" EntitySet="TypeComptes" />
+      <End Role="TypeComptesClients" EntitySet="TypeComptesClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ventes__IdVehicu__1FCDBCEB" Association="Self.FK__Ventes__IdVehicu__1FCDBCEB">
+      <End Role="Vehicules" EntitySet="Vehicules" />
+      <End Role="Ventes" EntitySet="Ventes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
