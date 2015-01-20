@@ -95,6 +95,7 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="DbConcessionnaireModel.Client">
         <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
           <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="Sexe" ColumnName="Sexe" />
           <ScalarProperty Name="NumeroPermis" ColumnName="NumeroPermis" />
@@ -105,8 +106,6 @@
           <ScalarProperty Name="NumeroCivique" ColumnName="NumeroCivique" />
           <ScalarProperty Name="Telephone" ColumnName="Telephone" />
           <ScalarProperty Name="Courriel" ColumnName="Courriel" />
-          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
-          <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
           <ScalarProperty Name="Prenom" ColumnName="Prenom" />
           <ScalarProperty Name="Nom" ColumnName="Nom" />
           <ScalarProperty Name="IdClient" ColumnName="IdClient" />

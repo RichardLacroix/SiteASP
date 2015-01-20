@@ -229,8 +229,6 @@
     <Property Name="IdClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nom" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Name="Prenom" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="MotDePasse" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Name="Courriel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Telephone" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
     <Property Name="NumeroCivique" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -245,6 +243,7 @@
     <NavigationProperty Name="Favoris" Relationship="DbConcessionnaireModel.FK__Favoris__IdClien__2E1BDC42" FromRole="Client" ToRole="Favori" />
     <NavigationProperty Name="TypeComptesClients" Relationship="DbConcessionnaireModel.FK__TypeCompt__IdCli__164452B1" FromRole="Client" ToRole="TypeComptesClient" />
     <NavigationProperty Name="Ventes" Relationship="DbConcessionnaireModel.FK__Ventes__IdClient__20C1E124" FromRole="Client" ToRole="Vente" />
+    <Property Name="AspNetUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Commentai__IdCli__286302EC">
     <End Type="DbConcessionnaireModel.Client" Role="Client" Multiplicity="1" />

@@ -14,8 +14,6 @@
     <Property Name="IdClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nom" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="Prenom" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="NomUtilisateur" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="MotDePasse" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="Courriel" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Telephone" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="NumeroCivique" Type="varchar" MaxLength="10" Nullable="false" />
@@ -26,6 +24,7 @@
     <Property Name="NumeroPermis" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="Sexe" Type="bit" Nullable="false" />
     <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="Commentaires">
     <Key>
