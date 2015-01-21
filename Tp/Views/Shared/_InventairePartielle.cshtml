@@ -2,15 +2,17 @@
 
 @model List<Vehicule>
 
-@foreach (Vehicule v in Model)
-{
-    <div class="gallery-grid">
-        <div class="gallery-grid" style="width:200px;">
-            <img src="~/@v.Photo" alt="" />
 
-            <h4>@v.Marque</h4>
+    @foreach (Vehicule v in Model)
+    {
+        <div class="gallery-grid">
+            <div class="gallery-grid" style="width:200px;">
+                <img src="~/@v.Photo" alt="" />
 
-            <p><a href="@Url.Action("Detail", new {pIdVehicule =  v.IdVehicule })" class="btn btn-primary">Détails</a></p>
+                <h4>@v.Marque</h4>
+
+                <p><a href="@Url.Action("Detail", new {pIdVehicule =  v.IdVehicule })" class="btn btn-primary">Détails</a></p>
+            </div>
         </div>
-    </div>
-}
+    }
+   

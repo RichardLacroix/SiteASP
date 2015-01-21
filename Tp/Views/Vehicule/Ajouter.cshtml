@@ -4,6 +4,7 @@
 
 @{
     ViewBag.Title = "Ajouter";
+    List<CategorieVehicule> listeCat = ViewBag.listeCategorie;
 }
 
 @section scripts{
@@ -63,8 +64,7 @@
             @Html.ValidationMessageFor(m => m.Apparition)
 
             @Html.LabelFor(m => m.IdCategorie)
-            @Html.TextBoxFor(m => m.IdCategorie)
-            @Html.ValidationMessageFor(m => m.IdCategorie)
+            @Html.DropDownListFor(m => m.IdCategorie, new SelectList(listeCat, "IdCategorie", "NomCategorie"))
 
             @Html.LabelFor(m => m.PrixAchat)
             @Html.TextBoxFor(m => m.PrixAchat)

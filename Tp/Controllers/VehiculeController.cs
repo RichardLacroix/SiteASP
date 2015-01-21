@@ -9,13 +9,31 @@ namespace Tp.Controllers
 {
     public class VehiculeController : Controller
     {
+       
         public ActionResult Index()
         {
+            String c;
+
+            if (Request.Cookies["Id"] != null)
+            {
+                c = Request.Cookies["Id"].ToString();
+
+            }
+            else 
+            {
+                c = "1";
+                HttpCookie aCookie = new HttpCookie("Id");
+                aCookie.Value = "2";
+                aCookie.Expires = DateTime.Now.AddYears(1);
+                Response.Cookies.Add(aCookie);
+            }
+           
             List<Vehicule> listeVehicule = Vehicule.RecupererTousVehicule();
 
             List<CategorieVehicule> listeCategorie = CategorieVehicule.RecupererTouteCategorie();
-
+            List<Favori> listeFavori = Favori.RecupererFavoriParIdClient(2);
             ViewBag.listeCategorie = new List<CategorieVehicule>(listeCategorie);
+            
 
             return View(listeVehicule);
         }
@@ -56,6 +74,10 @@ namespace Tp.Controllers
         [HttpGet]
         public ActionResult Ajouter()
         {
+            List<CategorieVehicule> listeCategorie = CategorieVehicule.RecupererTouteCategorie();
+
+            ViewBag.listeCategorie = new List<CategorieVehicule>(listeCategorie);
+
             Vehicule vehicule = new Vehicule();
 
             return View(vehicule);

@@ -401,6 +401,7 @@
     <Content Include="Views\Vehicule\Modifier.cshtml" />
     <Content Include="Views\Vehicule\Ajouter.cshtml" />
     <Content Include="Views\Shared\_InventairePartielle.cshtml" />
+    <Content Include="Views\Shared\_FavoriPartielle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

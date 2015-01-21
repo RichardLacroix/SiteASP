@@ -8,14 +8,27 @@ namespace Tp.Models.EF
     public partial class Favori
     {
         //Recuperer les favoris par idClient
-        public static List<Favori> RecupererFavoriParIdClient(int idClient)
+        public static List<Vehicule> RecupererFavoriParIdClient(int? idClient)
         {
-            List<Favori> favori = null;
-            using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
+            List<Vehicule> vehicule = new List<Vehicule>();
+            List<Favori> listeFavori;
+            if (idClient > 0)
             {
-                favori = db.Favoris.Where(i => i.IdClient == idClient).ToList();
+                using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
+                {
+                    listeFavori = db.Favoris.Where(i => i.IdClient == idClient).ToList();
+
+                    
+                }
             }
-            return favori;
-        }   
-    }
+            else
+            {
+                listeFavori = new List<Favori>();  
+            }
+
+
+            return vehicule;
+        }
+        
+     }
 }

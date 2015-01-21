@@ -215,7 +215,6 @@ C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\bin\Microsoft.Owin.Security.OAuth.
 C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\obj\Debug\Tp.csprojResolveAssemblyReference.cache
 C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\obj\Debug\Tp.dll
 C:\Users\jonathan\Documents\GitHub\SiteASP\Tp\obj\Debug\Tp.pdb
 C:\Users\jonathan\Pictures\SiteASP\Tp\bin\Tp.dll.config

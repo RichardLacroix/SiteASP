@@ -1,12 +1,14 @@
 ﻿@using Tp.Models.EF
 
+
 @{
     ViewBag.Title = "Inventaire des vehicules";
     Layout = "~/Views/Shared/_Layout.cshtml";
     String msg = (String)TempData["FormMessage"];
 
     List<CategorieVehicule> listeCat = ViewBag.listeCategorie;
-
+    
+    
 }
 
 
@@ -15,6 +17,8 @@
 
 <div id="listeVehicule">
    @Html.Partial("_InventairePartielle")
+   
+   
 </div>
 
     <div>
