@@ -20,7 +20,7 @@ namespace Tp.Models.EF
 
         public static void Save(Client pModel)
         {
-            using (DbConcessionnaireEntities1 bd = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 bd = new DbConcessionnaireEntities111())
             {
                 if (pModel.IdClient > 0)
                 {
@@ -47,12 +47,12 @@ namespace Tp.Models.EF
             }
         }
 
-        public static Client GetById(int id, DbConcessionnaireEntities1 pdb = null)
+        public static Client GetById(int id, DbConcessionnaireEntities111 pdb = null)
         {
             Boolean bdEstNull = false;
             if (pdb == null)
             {
-                pdb = new DbConcessionnaireEntities1();
+                pdb = new DbConcessionnaireEntities111();
                 bdEstNull = true;
             }
             Client client = pdb.Clients.Where(i => i.IdClient == id).FirstOrDefault();
@@ -100,7 +100,7 @@ namespace Tp.Models.EF
         public string Telephone { get; set; }
 
         [Required]
-        [StringLength(10, ErrorMessage = "Maximum de 10 Caratère.", MinimumLength = 6)]
+        [StringLength(10, ErrorMessage = "Maximum de 10 Caratère.")]
         public string NumeroCivique { get; set; }
 
         [Required]

@@ -12,7 +12,7 @@ namespace Tp.Models.EF
         {
             List<CategorieVehicule> listeVehicule;
 
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 listeVehicule = db.CategorieVehicules.OrderBy(m => m.IdCategorie).ToList();
             }
@@ -25,14 +25,14 @@ namespace Tp.Models.EF
             return listeVehicule;
         }
 
-        public static CategorieVehicule GetById(int pId, DbConcessionnaireEntities1 pDb = null)
+        public static CategorieVehicule GetById(int pId, DbConcessionnaireEntities111 pDb = null)
         {
             //Option de recevoir le context courant ou pas. 
             //Pour vouloire faire une mise a jour il faut le meme context que celui on fait un db.SaveChanges();
             Boolean dbWasNull = false;
             if (pDb == null)
             {
-                pDb = new DbConcessionnaireEntities1();
+                pDb = new DbConcessionnaireEntities111();
                 dbWasNull = true;
             }
             //Recuperer l'item dans la BD
@@ -50,7 +50,7 @@ namespace Tp.Models.EF
 
         public static void Delete(int id)
         {
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 //TODO: delete
 
@@ -60,7 +60,7 @@ namespace Tp.Models.EF
 
         public static void Save(CategorieVehicule pModelForm)
         {
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 //Edit
                 if (pModelForm.IdCategorie > 0)

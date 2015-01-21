@@ -242,7 +242,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DbConcessionnaireEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DbConcessionnaireEntities111" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CategorieVehicules" EntityType="Self.CategorieVehicule" />
     <EntitySet Name="Clients" EntityType="Self.Client" />
     <EntitySet Name="Commentaires" EntityType="Self.Commentaire" />

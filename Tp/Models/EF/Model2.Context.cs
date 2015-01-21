@@ -13,10 +13,10 @@ namespace Tp.Models.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbConcessionnaireEntities1 : DbContext
+    public partial class DbConcessionnaireEntities111 : DbContext
     {
-        public DbConcessionnaireEntities1()
-            : base("name=DbConcessionnaireEntities1")
+        public DbConcessionnaireEntities111()
+            : base("name=DbConcessionnaireEntities111")
         {
         }
     

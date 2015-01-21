@@ -93,7 +93,7 @@ namespace Tp.Controllers
                     //setter le nouveau ID
                     model.AspNetUserId = aUser.Id;
 
-                    //TODO: Save de notre utilisateur custom
+                    
                     Client.Save(model);
 
                     return RedirectToAction("Index", "Home");

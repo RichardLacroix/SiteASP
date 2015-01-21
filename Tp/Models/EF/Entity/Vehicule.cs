@@ -14,7 +14,7 @@ namespace Tp.Models.EF
         {
             List<Vehicule> listeVehicule;
 
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 listeVehicule = db.Vehicules.OrderBy(m => m.PrixVente).ToList();
             }
@@ -28,13 +28,13 @@ namespace Tp.Models.EF
         }
 
         //Recuperer les vehicules selon une categorie donnée
-        public static List<Vehicule> RecupererVehiculeParCategorie(int? pIdCategorie, DbConcessionnaireEntities1 pCurrentContext = null)
+        public static List<Vehicule> RecupererVehiculeParCategorie(int? pIdCategorie, DbConcessionnaireEntities111 pCurrentContext = null)
         {
             Boolean dbEstNull = false;
 
             if (pCurrentContext == null)
             {
-                pCurrentContext = new DbConcessionnaireEntities1();
+                pCurrentContext = new DbConcessionnaireEntities111();
                 dbEstNull = true;
             }
 
@@ -49,12 +49,12 @@ namespace Tp.Models.EF
         }
 
         //Recuperer un vehicule par son id
-        public static Vehicule RecupererVehiculeParId(int? pIdVehicule, DbConcessionnaireEntities1 pDb = null)
+        public static Vehicule RecupererVehiculeParId(int? pIdVehicule, DbConcessionnaireEntities111 pDb = null)
         {
             Boolean dbEstNull = false;
             if (pDb == null)
             {
-                pDb = new DbConcessionnaireEntities1();
+                pDb = new DbConcessionnaireEntities111();
                 dbEstNull = true;
             }
 
@@ -71,7 +71,7 @@ namespace Tp.Models.EF
         //Ajouter ou mettre a jour un vehicule
         public static void Sauvegarder(Vehicule pModelVehicule)
         {
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 if (pModelVehicule.IdVehicule > 0)
                 {
@@ -100,7 +100,7 @@ namespace Tp.Models.EF
         //Suppimer un vehicule
         public static void Supprimer(int idVehicule)
         {
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
             {
                 Vehicule vehiculeASupprimer = RecupererVehiculeParId(idVehicule, db);
 
