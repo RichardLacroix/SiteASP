@@ -1,0 +1,21 @@
+﻿@model Tp.Models.EF.CategorieVehicule
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+@using (Html.BeginForm("Admin_Detail", "CategorieVehicule"))
+{
+    @Html.ValidationSummary(true, "Certain champs ne sont pas valide:")
+    @Html.HiddenFor(m => m.IdCategorie)
+    <br />
+    @Html.LabelFor(m => m.NomCategorie)
+    @Html.EditorFor(m => m.NomCategorie)
+    @Html.ValidationMessageFor(m => m.NomCategorie)
+    
+    <br />
+    <input type="submit" value="Enregistrer" />
+}
+
+<a href="@Url.Action("Delete", new { id = Model.IdCategorie })">Supprimer</a>

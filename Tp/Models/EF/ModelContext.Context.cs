@@ -13,10 +13,10 @@ namespace Tp.Models.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbConcessionnaireEntities : DbContext
+    public partial class DbConcessionnaireEntities1 : DbContext
     {
-        public DbConcessionnaireEntities()
-            : base("name=DbConcessionnaireEntities")
+        public DbConcessionnaireEntities1()
+            : base("name=DbConcessionnaireEntities1")
         {
         }
     
@@ -26,13 +26,13 @@ namespace Tp.Models.EF
         }
     
         public virtual DbSet<CategorieVehicule> CategorieVehicules { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Commentaire> Commentaires { get; set; }
         public virtual DbSet<Favori> Favoris { get; set; }
-        public virtual DbSet<Vehicule> Vehicules { get; set; }
-        public virtual DbSet<Vente> Ventes { get; set; }
         public virtual DbSet<Paiement> Paiements { get; set; }
         public virtual DbSet<TypeCompte> TypeComptes { get; set; }
         public virtual DbSet<TypeComptesClient> TypeComptesClients { get; set; }
-        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Vehicule> Vehicules { get; set; }
+        public virtual DbSet<Vente> Ventes { get; set; }
     }
 }

@@ -25,8 +25,6 @@ namespace Tp.Models.EF
         public int IdClient { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string NomUtilisateur { get; set; }
-        public string MotDePasse { get; set; }
         public string Courriel { get; set; }
         public string Telephone { get; set; }
         public string NumeroCivique { get; set; }
@@ -37,6 +35,7 @@ namespace Tp.Models.EF
         public string NumeroPermis { get; set; }
         public bool Sexe { get; set; }
         public string Photo { get; set; }
+        public string AspNetUserId { get; set; }
     
         public virtual ICollection<Commentaire> Commentaires { get; set; }
         public virtual ICollection<Favori> Favoris { get; set; }

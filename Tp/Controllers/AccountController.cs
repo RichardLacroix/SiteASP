@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Tp.Models;
+using Tp.Models.EF;
 
 namespace Tp.Controllers
 {
@@ -74,7 +75,7 @@ namespace Tp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(Client model)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +84,18 @@ namespace Tp.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
+                    
+
+                    //Recuperation d'un user
+                    UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+                    ApplicationUser aUser = UserManager.FindByName(model.UserName);
+
+                    //setter le nouveau ID
+                    model.AspNetUserId = aUser.Id;
+
+                    //TODO: Save de notre utilisateur custom
+                    Client.Save(model);
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
