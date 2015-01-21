@@ -18,7 +18,7 @@ namespace Tp.Models.EF
         public int IdVehicule { get; set; }
         public int IdClient { get; set; }
     
-        public virtual Vehicule Vehicule { get; set; }
         public virtual Client Client { get; set; }
+        public virtual Vehicule Vehicule { get; set; }
     }
 }

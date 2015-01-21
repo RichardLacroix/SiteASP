@@ -11,7 +11,7 @@ namespace Tp.Models.EF
         public static List<Favori> RecupererFavoriParIdClient(int idClient)
         {
             List<Favori> favori = null;
-            using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
+            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
             {
                 favori = db.Favoris.Where(i => i.IdClient == idClient).ToList();
             }
