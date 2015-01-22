@@ -1,0 +1,19 @@
+﻿@using Tp.Models.EF
+
+@model List<Vehicule>
+
+@{
+    ViewBag.Title = "Favori";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Favori</h2>
+
+@foreach (Vehicule v in Model)
+{
+
+    <p>@v.Marque</p>
+
+
+
+}

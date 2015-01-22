@@ -172,6 +172,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Outil.cs" />
     <Compile Include="Logic\PersoHelperSexe.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EF\CategorieVehicule.cs">
@@ -403,12 +404,12 @@
     <Content Include="Views\Vehicule\Ajouter.cshtml" />
     <Content Include="Views\Shared\_InventairePartielle.cshtml" />
     <Content Include="Views\Shared\_FavoriPartielle.cshtml" />
+    <Content Include="Views\Favori\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CategorieVehicule\" />
     <Folder Include="Views\Commentaire\" />
-    <Folder Include="Views\Favori\" />
     <Folder Include="Views\Inventaire\" />
     <Folder Include="Views\Payment\" />
     <Folder Include="Views\Vente\" />

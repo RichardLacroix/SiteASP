@@ -2,33 +2,88 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+
 
 namespace Tp.Models.EF
 {
     public partial class Favori
     {
         //Recuperer les favoris par idClient
-        public static List<Favori> RecupererFavoriParIdClient(int? idClient)
+        public static List<Vehicule> RecupererFavoriParIdClient(int idClient)
         {
-            List<Vehicule> vehicule = new List<Vehicule>();
-            List<Favori> listeFavori;
+            List<Vehicule> listeFavori;
             if (idClient > 0)
             {
-                using (DbConcessionnaireEntities111 db = new DbConcessionnaireEntities111())
+                using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
                 {
-                    listeFavori = db.Favoris.Where(i => i.IdClient == idClient).ToList();
-
-                    
+                    listeFavori = db.Vehicules.Where(i => i.Favoris.Any(m => m.IdClient == idClient)).ToList();
                 }
             }
             else
             {
-                listeFavori = new List<Favori>();  
+                listeFavori = new List<Vehicule>();
             }
-
 
             return listeFavori;
         }
-        
-     }
+
+        public static List<Favori> RecupererTousFavoris()
+        {
+            List<Favori> listefavori;
+
+            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            {
+                listefavori = db.Favoris.OrderBy(m => m.IdClient).ToList();
+            }
+
+            if (listefavori == null)
+            {
+                listefavori = new List<Favori>();
+            }
+
+            return listefavori;
+        }
+
+        public static Boolean ValideUnFavori(int pIdVehicule)
+        {
+            List<Favori> listefavori = Favori.RecupererTousFavoris();
+
+
+
+
+            foreach (Favori favori in listefavori)
+            {
+                if (favori.IdVehicule == pIdVehicule)
+                {
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
+
+        }
+
+        public static void Sauvegarder(int pIdVehicule)
+        {
+            Favori modelFavori = new Favori();
+
+            modelFavori.IdVehicule = pIdVehicule;
+            modelFavori.IdClient = pIdVehicule;
+
+            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            {
+
+                db.Favoris.Attach(modelFavori);
+                db.Favoris.Add(modelFavori);
+
+
+                db.SaveChanges();
+            }
+        }
+
+    }
 }
