@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tp.Models.EF.Entity;
 
 
 namespace Tp.Models.EF
@@ -15,7 +16,7 @@ namespace Tp.Models.EF
             List<Vehicule> listeFavori;
             if (idClient > 0)
             {
-                using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+                using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
                 {
                     listeFavori = db.Vehicules.Where(i => i.Favoris.Any(m => m.IdClient == idClient)).ToList();
                 }
@@ -32,7 +33,7 @@ namespace Tp.Models.EF
         {
             List<Favori> listefavori;
 
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
             {
                 listefavori = db.Favoris.OrderBy(m => m.IdClient).ToList();
             }
@@ -74,7 +75,7 @@ namespace Tp.Models.EF
             modelFavori.IdVehicule = pIdVehicule;
             modelFavori.IdClient = pIdVehicule;
 
-            using (DbConcessionnaireEntities1 db = new DbConcessionnaireEntities1())
+            using (DbConcessionnaireEntities db = new DbConcessionnaireEntities())
             {
 
                 db.Favoris.Attach(modelFavori);

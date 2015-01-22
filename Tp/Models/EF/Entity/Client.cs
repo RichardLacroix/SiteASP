@@ -20,7 +20,7 @@ namespace Tp.Models.EF
 
         public static void Save(Client pModel)
         {
-            using (DbConcessionnaireEntities111 bd = new DbConcessionnaireEntities111())
+            using (DbConcessionnaireEntities bd = new DbConcessionnaireEntities())
             {
                 if (pModel.IdClient > 0)
                 {
@@ -47,12 +47,12 @@ namespace Tp.Models.EF
             }
         }
 
-        public static Client GetById(int id, DbConcessionnaireEntities111 pdb = null)
+        public static Client GetById(int id, DbConcessionnaireEntities pdb = null)
         {
             Boolean bdEstNull = false;
             if (pdb == null)
             {
-                pdb = new DbConcessionnaireEntities111();
+                pdb = new DbConcessionnaireEntities();
                 bdEstNull = true;
             }
             Client client = pdb.Clients.Where(i => i.IdClient == id).FirstOrDefault();

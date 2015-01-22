@@ -31,7 +31,6 @@ namespace Tp.Controllers
             List<Vehicule> listeVehicule = Vehicule.RecupererTousVehicule();
 
             List<CategorieVehicule> listeCategorie = CategorieVehicule.RecupererTouteCategorie();
-            List<Favori> listeFavori = Favori.RecupererFavoriParIdClient(2);
             ViewBag.listeCategorie = new List<CategorieVehicule>(listeCategorie);
             
 

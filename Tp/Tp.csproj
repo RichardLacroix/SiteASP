@@ -187,6 +187,7 @@
     <Compile Include="Models\EF\Entity\CategorieVehicule.cs" />
     <Compile Include="Models\EF\Entity\Client.cs" />
     <Compile Include="Models\EF\Entity\Commentaire.cs" />
+    <Compile Include="Models\EF\Entity\DbConcessionnaireEntities.cs" />
     <Compile Include="Models\EF\Entity\Favori.cs" />
     <Compile Include="Models\EF\Entity\ModelContext.cs" />
     <Compile Include="Models\EF\Entity\Paiement.cs" />

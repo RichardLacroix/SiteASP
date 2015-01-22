@@ -525,7 +525,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DbConcessionnaireEntities111" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DbConcessionnaireEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CategorieVehicules" EntityType="Self.CategorieVehicule" />
           <EntitySet Name="Clients" EntityType="Self.Client" />
           <EntitySet Name="Commentaires" EntityType="Self.Commentaire" />
@@ -581,7 +581,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbConcessionnaireModelStoreContainer" CdmEntityContainer="DbConcessionnaireEntities111">
+        <EntityContainerMapping StorageEntityContainer="DbConcessionnaireModelStoreContainer" CdmEntityContainer="DbConcessionnaireEntities">
           <EntitySetMapping Name="CategorieVehicules">
             <EntityTypeMapping TypeName="DbConcessionnaireModel.CategorieVehicule">
               <MappingFragment StoreEntitySet="CategorieVehicules">
