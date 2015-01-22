@@ -67,6 +67,11 @@ namespace Tp.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+
+            List<String> lstSexe = new List<String>();
+            lstSexe.Add("Homme");
+            lstSexe.Add("Femme");
+            ViewBag["sexe"] = lstSexe;
             return View();
         }
 
@@ -93,7 +98,6 @@ namespace Tp.Controllers
                     //setter le nouveau ID
                     model.AspNetUserId = aUser.Id;
 
-                    
                     Client.Save(model);
 
                     return RedirectToAction("Index", "Home");

@@ -1,7 +1,9 @@
-﻿@model Tp.Models.EF.Client
+﻿@using Tp.Logic
+@using System.Collections
+@model Tp.Models.EF.Client
 @{
     ViewBag.Title = "Register";
-    
+    List<String> liste = ViewBag["sexe"];
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -48,7 +50,12 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Sexe, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.Sexe, new { @class = "form-control" })
+            @*@PersoHelperSexe.SexCheck("Sexe", "Genre", true)*@
+            
+            
+                @*@Html.DropDownList(*@
+            
+          
             @Html.ValidationMessageFor(m => m.Sexe)
         </div>
     </div>
